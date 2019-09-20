@@ -1,2 +1,11 @@
 <h1>Bem vindo, {{nome}}, como vai você?</h1>
 <h2>Tenha um bom dia!</h2>
+
+<h1>Listando os usuários:</h1>
+<ul>
+    {%for usuario in usuarios %}
+        <li>{{ usuario }}</li>
+    {% endfor %}
+</ul>
+
+<a href='/new'>Cadastrar novo Usuario.</a>
