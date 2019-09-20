@@ -8,6 +8,8 @@ nunjucks.configure('minhasviews', {
     express: app,
     watch: true,
 });
+
+app.use(express.urlencoded({ extended: false}));
 //definindo extensão dos arquivos views
 app.set('view engine', 'njk');
 
@@ -19,5 +21,13 @@ app.get('/', (req, res) => {
 app.get('/new', (req, res) => {
     return res.render('new');
 })
+
+app.post('/create', (req, res) => {
+    console.log(req.body);
+    //res.send(`Usuário cadastrado: ${req.body.usuario}`)
+    usuarios.push(req.body.usuario)
+    res.redirect('/')
+})
+
 
 app.listen(3000);
