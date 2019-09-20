@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 app.get('/', (req, res) => {
-    return res.send(`Hi ${req.query.name}`);
+    return res.send(`Hello ${req.query.name}`);
 });
 
 app.get('/login/:nickname', (req, res) => {
