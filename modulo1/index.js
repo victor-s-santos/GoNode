@@ -1,9 +1,13 @@
-const http = require('http')
-//usado para criar servidores simples
+const express = require("express");
 
-http
-    .createServer((req, res) => {
-        console.log(req);
-        return res.end("Hello world in a web page!")
-    })
-    .listen(3000);
+const app = express();
+
+app.get('/', (req, res) => {
+    return res.send('Hello World');
+});
+
+app.get('/login', (req, res) => {
+    return res.send('Login');
+});
+
+app.listen(3000);
